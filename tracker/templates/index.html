@@ -2,7 +2,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css" integrity="sha512-72McA95q/YhjwmWFMGe8RI3aZIMCTJWPBbV8iQY3jy1z9+bi6+jHnERuNrDPo/WGYEzzNs4WdHNyyEr/yXJ9pA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <h1>Expense Tracker</h1>
 <div class="container">
+  {% if request.user.is_authenticated %}
+  <h2>{{ request.user.username }}</h2>
+  {% endif %}
   <div class="header">
+      
     <img src="https://i.ibb.co/jfScDTC/budget.png" alt="Expense Tracker" />
     <div class="balance-container">
       <h2>Your Balance</h2>
@@ -59,6 +63,15 @@
     </div>
     <button class="btn" type="submit">Add transaction</button>
   </form>
+  {% if request.user.is_authenticated %}
+  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+    Click here to logout <a href="{% url 'logout_page' %}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Logout</a>
+</p>
+  {% else %}
+  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+    Click here to login <a href="{% url 'login_page' %}" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login</a>
+</p>
+{% endif %}
 </div>
 <!-- Notification -->
 <div class="notification-container" id="notification">
