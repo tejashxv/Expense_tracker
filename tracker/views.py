@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+import time
+import logging
+logger = logging.getLogger(__name__)
 # Create your views here.
 
 def registration(request):
@@ -36,6 +39,7 @@ def registration(request):
 
 @login_required(login_url='login_page')
 def index(request):
+    time.sleep(1)
     print(request.user)
     if request.method == 'POST':
         description = request.POST.get('description')
@@ -63,6 +67,11 @@ def index(request):
 
 
 def login_page(request):
+    logger.debug('this is debug message')
+    logger.info('this is info message')
+    logger.warning('this is warning message')
+    logger.error('this is error message')
+    logger.critical('this is critical message')
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
