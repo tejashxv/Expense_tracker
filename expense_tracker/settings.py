@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n2tz0^hd7n6$#x(3+ixg37towdk+uy_oau78dqhjel+jb_4iv)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["expense-tracker-rrmd.onrender.com"]
+ALLOWED_HOSTS = ["expense-tracker-rrmd.onrender.com"]
 
 
 # Application definition
