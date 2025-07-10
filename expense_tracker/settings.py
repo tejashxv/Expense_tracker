@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n2tz0^hd7n6$#x(3+ixg37towdk+uy_oau78dqhjel+jb_4iv)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["expense-tracker-rrmd.onrender.com"]
 
