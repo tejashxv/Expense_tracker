@@ -9,3 +9,5 @@ services:
     volumes:
       - .:/expense_tracker
     working_dir: /expense_tracker
+    environment:
+      - DEBUG=1
