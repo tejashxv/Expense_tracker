@@ -28,7 +28,7 @@ A **simple Expense Tracker web application** to track and manage your daily expe
 
 ### 1️ Clone the repository
 ```cmd
-git clone https://github.com/yourusername/expense-tracker.git
+git clone https://github.com/tejashxv/expense-tracker.git
 cd expense-tracker
 ```
 
