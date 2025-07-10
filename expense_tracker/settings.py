@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-n2tz0^hd7n6$#x(3+ixg37towdk+uy_oau78dqhjel+jb_4iv)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["expense-tracker-rrmd.onrender.com"]
+# ALLOWED_HOSTS = ["expense-tracker-rrmd.onrender.com"]
 
 
 # Application definition
@@ -134,3 +134,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+        'file':{
+            'level':'ERROR',
+            'class':'logging.FileHandler',
+            'filename':os.path.join(BASE_DIR, 'error.log'),
+        }
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
+    },
+}
