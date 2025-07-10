@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: expense-tracker
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: |
+      python manage.py migrate --noinput
+      gunicorn expense_tracker.wsgi:application --bind 0.0.0.0:$PORT
